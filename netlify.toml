@@ -1,0 +1,22 @@
+[build]
+  functions = "netlify/functions"
+  # لو لديك مجلد مخصص للخروج (publish = "dist") ضعه هنا
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "netlify-plugin-js-obfuscator"
+
+  # يمكنك التحكم بالإعدادات التالية (تمثل خيارات مكتبة javascript-obfuscator)
+  [plugins.inputs]
+    compact = true
+
+    # أضف أو عدّل المزيد حسب رغبتك
+[[plugins]]
+  package = "netlify-plugin-minify-html"
+  [plugins.inputs]
+    removeComments = true
+    removeEmptyAttributes = true
+    removeOptionalTags = true
+
