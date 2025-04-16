@@ -959,17 +959,3 @@ function checkInternetConnection() {
 checkInternetConnection();
 setInterval(checkInternetConnection, 20000);
 
-// 🔒 منع كلك يمين وبعض اختصارات المطور
-document.addEventListener('contextmenu', e => e.preventDefault());
-
-document.onkeydown = function(e) {
-  if (
-    e.keyCode === 123 || // F12
-    (e.ctrlKey && e.shiftKey && e.keyCode === 'I'.charCodeAt(0)) || // Ctrl+Shift+I
-    (e.ctrlKey && e.keyCode === 'U'.charCodeAt(0)) || // Ctrl+U
-    (e.ctrlKey && e.keyCode === 'S'.charCodeAt(0))    // Ctrl+S
-  ) {
-    e.preventDefault();
-    return false;
-  }
-};
